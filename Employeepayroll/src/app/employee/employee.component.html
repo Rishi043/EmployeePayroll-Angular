@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-3">
+        <h2>Employee Details</h2>
+        <button (click)="navigateToAddEmployee()" class="btn" id="add-btn">+ Add User</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of employeeInfo; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>
+                        <img [src]="item.profile_pic ? item.profile_pic : noImageUrl" 
+                             alt="No image" height="45" width="45" class="profile-img">
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.gender }}</td>
+                    <td>{{ item.department }}</td>
+                    <td>{{ item.salary }}</td>
+                    <td>{{ item.startDate }}</td>
+                    <td>
+                        <button class="btn-action" (click)="updateEmployee(item.id)">🖋️</button>
+                        <button class="btn-action btn-success" (click)="deleteEmployee(item.id)">✕</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
