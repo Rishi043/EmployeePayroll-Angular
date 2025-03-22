@@ -17,6 +17,7 @@
                     <th>Department</th>
                     <th>Salary</th>
                     <th>Start Date</th>
+                    <th>Note</th> <!-- Added Note Column -->
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -33,6 +34,7 @@
                     <td>{{ item.department }}</td>
                     <td>{{ item.salary }}</td>
                     <td>{{ item.startDate }}</td>
+                    <td>{{ item.note }}</td> <!-- Display Note -->
                     <td>
                         <button class="btn-action" (click)="updateEmployee(item.id)">🖋️</button>
                         <button class="btn-action btn-success" (click)="deleteEmployee(item.id)">✕</button>
